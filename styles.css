@@ -68,11 +68,15 @@ section{
     display: grid;
     grid-template-areas:"title title2" 
                         "eventLeft eventRight";
+    grid-template-columns: 70% 30%;
 }
 .title2{
     grid-area: title2;
     padding: 1rem 1rem 0 1rem;
+    margin-right: 1rem;
     text-align: center;
+    text-overflow: ellipsis;
+    overflow: hidden;
 }   
 .title{
     grid-area: title;
@@ -84,18 +88,23 @@ section{
 }
 .eventRight{
     grid-area: eventRight;
-    padding: 2rem;
-    padding-top: 1rem;
+    margin-right: 1rem;
+    padding-top: 2rem;
+    display: flex;
+    flex-direction: column;
+    justify-content: space-evenly;
+    align-items: center;
+    flex-wrap: wrap;
 }
 .bookImg{
-    width: 100%;
-    padding-bottom: 2rem;
-    object-fit: cover;
-    display: flex;
-    justify-content: end;
+    max-width: fit-content;
+    flex:1;
 }
 .bookImg img{
-    max-height: 20rem;
+    height: auto;
+    width: 100%;
+    max-width: 225px;
+    min-width: 130px;
 }
 .images{
     display: flex;
@@ -105,10 +114,10 @@ section{
 .image{
     padding: 1rem;
     flex: 33%;
-
 }
 .image img{
-    width: 100%;
+    width: 100%;    
+    height: auto;
 }
 
 .banner{
@@ -127,27 +136,51 @@ section{
     color: coral;
     width: 100%;
 }
+footer{
+    width: 100%;
+    height: 215px;
+    border-top: rgb(181, 181, 181) solid 1px;
+    background: #9edce0;
+    color: white;
+    font-size: 1.25rem;
+    z-index: 999;
+    bottom: 0px;
+}
 /* Media Query for Mobile Devices */
 @media only screen and (max-width: 480px){
     nav{
+        display: flex;
+        overflow: hidden;
+        justify-content: center;
+    }
+
+    nav > ul{
         display: none;
     }
-    .banner {
-        border: #f5f5f5 solid 1rem;
-        display: grid;
-        grid-template-columns: 1fr 80% 1fr;
-        grid-template-rows: 1fr 1fr;
-        overflow: hidden;
-        height: 12rem;
 
+    .SearchBar{
+        padding-left:4rem;
+        float: none;
+        width: 75%;
+    }
+
+    #SearchBar{
+        margin:0;
+    }
+
+    .banner {
+        height: 5rem;
+        background-image: none;
+        background-color: white;
+        text-align: center;
     }
 
     .menu-bar {
-        background-color: rgb(255, 255, 255);
-        padding-top: 20px;
+        float: left;
+        padding-top: 35px;
+        padding-left: 20px;
         height: 100%;
         margin: 0;
-        grid-row: 1/4;
 
     }
 
@@ -162,28 +195,63 @@ section{
     }
 
     .banner h1 {
-        border-top: white 1rem solid;
+        border: white 1rem solid;
+        width: auto;
     }
 
     .banner h2 {
-        border-bottom: white .5rem solid;
+        display: none;
     }
 
-    .banner h1,
-    .banner h2 {
-        grid-column-start: 2;
-        font-size:1.75rem;
-        justify-content: center;
+    section{
+        margin:0;
+    }
+
+    .title{
+        margin-bottom: 0;
         text-align: center;
-        margin: 0;
     }
 
-    .whiteSpace {
-        grid-column-start: 3;
-        grid-row: 1/4;
-        background-color: white;
-        height: 100%;
+    .events{
+        display: grid;
+        grid-template-areas: "title title"
+                        "eventLeft eventLeft"
+                        "title2 title2"
+                        "eventRight eventRight";
+    }
+
+    .eventRight{
+        margin-right: 0;
+        padding: 0;
+        display: grid;
+        gap: 2rem;
+        padding-left: 1rem;
+        grid-auto-flow: column;
+        grid-auto-columns: 55%;
+        justify-content: left;
+        overflow-x: auto;
+        overscroll-behavior-inline: contain;
+    }
+
+    .bookImg{
+        border: #aecbcd solid 3px;
+        padding: 1rem;
+        background-color: #f5f5f5;
+        border-radius: 5px;;
+    }
+
+    .bookImg > img{
         width: 100%;
+        height: auto;
+    }
+
+    .inlineScroll{
+        scroll-snap-type: inline mandatory;
+        scroll-padding-inline: 1rem;
+    }
+
+    .inlineScroll > *{
+        scroll-snap-align: start;
     }
 }
 /* Media Query for low resolution Tablets, Ipads */
@@ -237,6 +305,9 @@ section{
     nav{
         display: none;
     }
+    .events{
+        grid-template-columns: 60% 40%;
+    }
 }
 /* Media Query for high resolution Tablets, Ipads */
 @media only screen and (min-width: 769px) and (max-width: 1024px){
@@ -248,9 +319,10 @@ section{
         text-align: center;
         margin-bottom: 0;
     }
-    .bookImg img{
-        max-height: 15rem;
+    .events{
+        grid-template-columns: 60% 40%;
     }
+
 }
 /* Media Query for Laptops and Desktops */
 @media only screen and (min-width: 1025px) and (max-width: 1280px){
@@ -274,4 +346,3 @@ section{
         padding-left: 3.75rem;
     }
 }
-
