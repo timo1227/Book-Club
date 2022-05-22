@@ -39,6 +39,56 @@ nav ul li a::after{
 nav ul li a:hover{
     cursor: pointer;
 }
+.menu-bar-button{
+    display: none;
+}
+.menu{
+    width: 100%;
+    height: 100%;
+    position: fixed;
+    margin: 0;
+    padding: 0;
+    top: 0;
+    bottom: 0;
+    right: 0;
+    left: -100%;
+    background: rgba(243, 243, 243, 0.98);
+    transition: 0.3s;
+    z-index: 998;
+}
+.mobile-menu-toggle {
+    border: #333 solid 1px;
+    background-color: rgb(218, 218, 218);
+    color: black;
+    display: block;
+    text-align: center;
+    font-size: 2rem;
+}
+.menu-options{
+    margin: 0;
+    padding: 0;
+    top: 60px;
+    bottom: 0;
+    right: 0;
+    left: 0;
+    position: absolute;
+    z-index: 999;
+}
+.menu ul{
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    text-align: center;
+}
+.menu ul li{
+    max-width: 1190px;
+    border: #333 solid 1px;
+    padding: .75rem 2rem;
+}
+.menu ul li a{
+    text-decoration: none;
+    color: #333;
+}
 .SearchBar{
     float: right;
     height: 100%;   
@@ -119,7 +169,6 @@ section{
     width: 100%;    
     height: auto;
 }
-
 .banner{
     height: 25rem;
     font-family: 'Pacifico', cursive;
@@ -158,10 +207,24 @@ footer{
         display: none;
     }
 
+    .bar{
+        display: block;
+        width: 30px;
+        height: 4px;
+        margin: 5px auto;
+        background-color: #333;
+        border-radius: 5px;
+    }
+
     .SearchBar{
-        padding-left:4rem;
+        display: flex;
+        height: 40px;
+        gap: 1rem;
+        align-items: center;
+        justify-content: center;
         float: none;
-        width: 75%;
+        width: 100%;
+        z-index: 998;
     }
 
     #SearchBar{
@@ -172,31 +235,22 @@ footer{
         height: 5rem;
         background-image: none;
         background-color: white;
-        text-align: center;
+        display: flex;
+        align-items: center;
     }
 
     .menu-bar {
-        float: left;
-        padding-top: 35px;
-        padding-left: 20px;
-        height: 100%;
         margin: 0;
-
     }
 
-    .menu-bar .bar {
-        border: #333 solid 2px;
+    .menu-bar-button {
         display: block;
-        margin: 0 auto;
-        margin-bottom: 3px;
-        width: 1.25rem;
-        border-radius: 5px;
-        grid-row-start: 1;
+        padding-left: 1rem;   
     }
-
     .banner h1 {
-        border: white 1rem solid;
-        width: auto;
+        text-align: center;
+        margin-top: 1.15rem;
+        font-size: 2.5rem;
     }
 
     .banner h2 {
@@ -239,77 +293,36 @@ footer{
         background-color: #f5f5f5;
         border-radius: 5px;;
     }
-
+    
     .bookImg > img{
         width: 100%;
         height: auto;
     }
-
+    
     .inlineScroll{
         scroll-snap-type: inline mandatory;
         scroll-padding-inline: 1rem;
     }
-
+    
     .inlineScroll > *{
-        scroll-snap-align: start;
+        scroll-snap-align: center;
+    }
+
+    .menu{
+        transition: all .5s ease-in-out;
+        position: fixed;
+    }
+    .menu.active{
+        left: 0;
     }
 }
-/* Media Query for low resolution Tablets, Ipads */
-/* @media only screen and (min-width: 481px) and (max-width: 768px){
-    .banner{
-        border: #f5f5f5 solid 1rem;
-        display: grid;
-        grid-template-columns: 1fr 80% 1fr;
-        grid-template-rows: 1fr 1fr;
-        overflow: hidden;
 
+@media only screen and (max-width: 545px) {
+    .banner h1 {
+        font-size: 1.85rem;
     }
-    .menu-bar{
-        background-color: rgb(255, 255, 255);
-        padding-top: 20px;
-        height: 100%;
-        padding-top: 20px;
-        margin:0;
-        grid-row: 1/4;
-
-    }
-    .menu-bar .bar{
-        border: #333 solid 2px;
-        display: block;
-        margin: 0 auto;
-        margin-bottom: 3px;
-        width: 25px;
-        border-radius: 5px;
-        grid-row-start: 1;
-    }
-    .banner h1{
-        border-top: white 1rem solid;
-    }
-    .banner h2{
-        border-bottom: white 1rem solid;
-    }
-    
-    .banner h1 , .banner h2{
-        grid-column-start: 2;
-        font-size: 3.25rem;
-        text-align: center;
-        margin: 0;
-    }
-    .whiteSpace{
-        grid-column-start: 3;
-        grid-row:1/4;
-        background-color: white;
-        height: 100%;
-        width: 100%;
-    }
-    nav{
-        display: none;
-    }
-    .events{
-        grid-template-columns: 60% 40%;
-    }
-} */
-/* Media Query for high resolution Tablets, Ipads */
+}
+/* Media Query for Mobile and Tablet Devices */
 @media only screen and (min-width: 769px) and (max-width: 1024px){
     header{
         border: #f5f5f5 solid 1rem;
@@ -321,6 +334,9 @@ footer{
     }
     .events{
         grid-template-columns: 60% 40%;
+    }
+    .extraBooks {
+        display: none !important;
     }
 
 }
@@ -334,6 +350,9 @@ footer{
         padding-left: 3rem;
         margin-bottom: 0;
     }
+    .extraBooks {
+        display: none !important;
+    }
 }
 /* Media Query for Large Screens */
 @media only screen and (min-width: 1281px){
@@ -344,5 +363,8 @@ footer{
         font-size: 5rem;
         margin-bottom: 0;
         padding-left: 3.75rem;
+    }
+    .extraBooks {
+        display: none !important;
     }
 }

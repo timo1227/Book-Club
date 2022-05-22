@@ -5,41 +5,53 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>South Beach Reading Club</title>
+    <script src="script.js" defer></script>
     <link rel="stylesheet" href="styles.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com" />
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=Pacifico&display=swap" rel="stylesheet"/>
     <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@400;500;600;700&display=swap" rel="stylesheet">
-    <script src="https://kit.fontawesome.com/7870bfe605.js" crossorigin="anonymous"></script>
+    <script src="https://kit.fontawesome.com/7870bfe605.js" crossorigin="anonymous"></script> 
   </head>
   <body>
     <header>
         <div class="banner">
             <!-- Menu Bar For Phones and Tablets -->
-            <div class="menu-bar">
+            <div id="menu-button" class="menu-bar">
                 <div class="menu-bar-button">
-                    <div class="bar"></div>
-                    <div class="bar"></div>
-                    <div class="bar"></div>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
+                  <span class="bar"></span>
                 </div>
             </div>
             <h1>South Beach Reading Club</h1>
             <h2>A place to read, learn, and grow</h2>
-            <span class="whiteSpace"></span>
         </div>  
         <nav>
             <ul>
                 <li><a href="#events">Events</a></li>
                 <li><a href="#gallary">Gallary</a></li>
-                <li>Contact</li>
+                <li><a href="#footer">Contact</a></li>
             </ul>
             <div class="SearchBar">
                 <i class="fa-solid fa-magnifying-glass"></i>
-                <input id='SearchBar' type="text" placeholder="Search..">
+                <input id='SearchBar' type="text" placeholder="Search.." word-search>
             </div>
       </nav>
     </header>
     <main>
+      <div id="menu" class="menu">
+        <a href="#" class="mobile-menu-toggle">
+          <i class="fa-regular fa-circle-xmark"></i>
+        </a>
+        <div class="menu-options">
+          <ul>
+            <li><a href="#events">Events</a></li>
+            <li><a href="#gallary">Gallary</a></li>
+            <li><a href="#footer">Contact</a></li>
+          </ul>
+        </div>
+      </div>
       <section id="events">
         <div class="events">
           <h2 class="title">Upcoming Events</h2>
@@ -101,6 +113,18 @@
                 <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B300%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&product=path%5B/pimages/9781538719770_p0_v6%5D&call=url%5Bfile:common/decodeProduct.chain%5D" alt="Dream Town">
               </div>
               <div class="bookImg">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B550%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&product=path%5B/pimages/9781984806734_p0_v7%5D&call=url%5Bfile:common/decodeProduct.chain%5D" alt="Beach Read">
+              </div>
+              <div class="bookImg extraBooks">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B550%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&product=path%5B/pimages/9781984806734_p0_v7%5D&call=url%5Bfile:common/decodeProduct.chain%5D" alt="Beach Read">
+              </div>
+              <div class="bookImg extraBooks">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B550%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&product=path%5B/pimages/9781984806734_p0_v7%5D&call=url%5Bfile:common/decodeProduct.chain%5D" alt="Beach Read">
+              </div>
+              <div class="bookImg extraBooks">
+                <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B550%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&product=path%5B/pimages/9781984806734_p0_v7%5D&call=url%5Bfile:common/decodeProduct.chain%5D" alt="Beach Read">
+              </div>
+              <div class="bookImg extraBooks">
                 <img src="https://prodimage.images-bn.com/lf?set=key%5Bresolve.pixelRatio%5D,value%5B1%5D&set=key%5Bresolve.width%5D,value%5B550%5D&set=key%5Bresolve.height%5D,value%5B10000%5D&set=key%5Bresolve.imageFit%5D,value%5Bcontainerwidth%5D&set=key%5Bresolve.allowImageUpscaling%5D,value%5B0%5D&product=path%5B/pimages/9781984806734_p0_v7%5D&call=url%5Bfile:common/decodeProduct.chain%5D" alt="Beach Read">
               </div>
             </div>
