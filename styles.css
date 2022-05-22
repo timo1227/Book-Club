@@ -194,6 +194,31 @@ footer{
     font-size: 1.25rem;
     z-index: 999;
     bottom: 0px;
+    display: flex;
+    flex-wrap: wrap ;
+    align-items: center;
+}
+
+footer ul{
+    list-style: none;
+    gap: 2rem;
+    width: 100%;
+    height: fit-content;
+    margin: 0;
+    display: flex;
+    flex-wrap: wrap;
+}
+
+footer ul li{
+    flex: 1 1 100px;
+    flex-direction: row;
+    justify-content: space-around;
+    align-content: center;
+}
+
+footer ul li a{
+    color: white;
+    text-decoration: none;
 }
 /* Media Query for Mobile Devices */
 @media only screen and (max-width: 768px){
