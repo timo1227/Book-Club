@@ -1,2 +1,2 @@
-# timo1227.github.io
-Responsive Webpage Project 
+# Book Club Website
+Responsive Webpage Project For A Book Club 
